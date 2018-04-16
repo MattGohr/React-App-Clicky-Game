@@ -1,5 +1,15 @@
-import allImages from "../../public/images/cat-guy-2.png";
+import allImages from "../images/crazyeyes.jpg";
 
-const imagess = allImagess;
+// function importAll (r) {
+//     console.log(r)
+//   r.keys().forEach(r);
+// }
 
-module export Images;
+let x = require.context('../images/', true, /\.jpg$/);
+
+x.keys().forEach((key) => {
+    console.log(key);
+})
+
+// export default x.keys();
+export default allImages;
