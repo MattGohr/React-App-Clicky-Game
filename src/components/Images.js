@@ -1,15 +1,15 @@
-import allImages from "../images/crazyeyes.jpg";
+// import allImages from "../images/crazyeyes.jpg";
 
 // function importAll (r) {
 //     console.log(r)
 //   r.keys().forEach(r);
 // }
 
-let x = require.context('../images/', true, /\.jpg$/);
+let req = require.context('../images/', true, /\.jpg$/);
 
-x.keys().forEach((key) => {
-    console.log(key);
+req.keys().forEach((key) => {
+    req(key);
 })
 
 // export default x.keys();
-export default allImages;
+export default req;
