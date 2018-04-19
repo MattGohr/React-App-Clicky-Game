@@ -3,27 +3,32 @@ import React from 'react';
 
 const ImageList = () => {
     function importAll(r) {
-        let images = {};
+        let images = [];
         r
             .keys()
             .forEach((item) => {
-                images[item.replace('./', '')] = r(item);
+
+                // images[item.replace('./', '')] = r(item);
+            images.push(`../images/${item.replace('./', '')}`)
+                    
             });
         return images;
     }
+
     const images = importAll(require.context('../images', false, /\.(png|jpg|svg)$/));
-    console.log(images.length);
-    // const imageItems = images.map((image) => {
-    //     return <img alt="newimg" image={images}/>
-    // })
+    console.log(images);
+    // const imageItems = images.map((image) => {     return <img alt="newimg"
+    // image={images}/> })
     return (
-
-        <div className="col-3">
-            <img alt="somthing" src={images['crazyeyes.jpg']}/>
+        <div className="row">
+            <div className="col-sm-3">
+                <img
+                    className="img-fluid"
+                    alt="Responsive-image"
+                    src={images[4]}/>
+            </div>
         </div>
-
     )
-
 }
 
 export default ImageList;
